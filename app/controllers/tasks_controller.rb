@@ -35,7 +35,7 @@ class TasksController < ApplicationController
       redirect_to @task
     else
       flash.now[:danger] = 'Task は正常に更新されませんでした'
-      reder:edit
+      render:edit
     end
   end
   
@@ -50,6 +50,6 @@ class TasksController < ApplicationController
   private
   
   def task_params
-    params.require(:task).permit(:content)
+    params.require(:task).permit(:content, :status)
   end
 end
